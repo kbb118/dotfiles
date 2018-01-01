@@ -1,0 +1,15 @@
+pointer = 1 2 3 5 4 7 6 8 9 10 11 12
+
+remove lock = Eisu_toggle
+
+keycode 66 = Control_L
+keycode 100 = Zenkaku_Hankaku
+
+keycode 102 = Mode_switch
+keycode 43 = h H Left Left
+keycode 44 = j J Down Down
+keycode 45 = k K Up Up
+keycode 46 = l L Right Right
+
+
+add control = Control_L
