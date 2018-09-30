@@ -1,12 +1,28 @@
-pointer = 1 2 3 5 4 7 6 8 9 10 11 12
 
+! CapsLock -> Ctrl
+remove Lock  = Eisu_toggle
+keysym Eisu_toggle = Control_L 
+add Control = Control_L 
 
-keycode 66 = Control_L
+! Shift and Space
+remove  Mod4  = Hyper_L
+add     Shift = Hyper_L
+keycode 254   = space 
+keysym  space = Hyper_L
 
-keycode 43 = h H Left Left
-keycode 44 = j J Down Down
-keycode 45 = k K Up Up
-keycode 46 = l L Right Right
+!!! xcape と連携して無変換単体で押されたときは
+!!! 通常の無変換、他のキーと合わせて押されたときは
+!!! Mode_switch として機能させる
+keycode 255      = Muhenkan 
+keysym  Muhenkan = Mode_switch Mode_switch
 
-
-add control = Control_L
+! おなじみの設定
+keysym h = h H Left      Left
+keysym j = j J Down      Down
+keysym k = k K Up        Up
+keysym l = l L Right     Right
+keysym n = n N BackSpace BackSpace
+keysym m = m M Delete    Delete
+keysym e = e E Home      Home
+keysym i = i I End       End
+keysym  Henkan_Mode = Henkan_Mode Henkan_Mode Return 
