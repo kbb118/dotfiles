@@ -3,8 +3,12 @@
 
 set encoding=utf8
 
+" LineNumber
 set number
 set relativenumber
+command! Ltoggle if &nu  |set nonu  |else |set  nu |endif
+                  \|if &rnu |set nornu |else |set rnu |endif
+
 set shortmess-=S    " show search count
 set showcmd
 set wildmenu
