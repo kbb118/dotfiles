@@ -28,6 +28,7 @@ set autoindent      "改行時に前の行のインデントを継続する
 set smartindent     "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set scrolloff=4
 set backspace=indent,eol,start
+autocmd Filetype vim setlocal ts=2 sw=2 sts=2
 
 " search
 "   小文字のみで検索したときは ignorecase
