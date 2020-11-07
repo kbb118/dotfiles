@@ -16,6 +16,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-jp/vimdoc-ja'
   set helplang=ja,en
 
+  " color
+  source ~/.vim/pre_plugin/color_scheme.vim
+
   " git
   source ~/.vim/pre_plugin/git.vim
 

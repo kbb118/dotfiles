@@ -38,18 +38,6 @@ set incsearch
 set hlsearch
 set nowrapscan
 
-" 不可視文字に対する設定
-" https://vim.fandom.com/wiki/Highlight_unwanted_spaces
-" tab と nbsp だけ可視化しとく。
-set list
-set listchars=tab:»-,nbsp:%
-" tab は黒背景に対し目立たない色に。
-highlight TabChar ctermfg=234
-autocmd VimEnter,WinEnter * match TabChar /\t/
-" 行末をタイピングしてるときは出ないようになってる
-highlight ExtraWhitespace ctermbg=red
-autocmd VimEnter,WinEnter * 2match ExtraWhitespace /[ \t]\+\%#\@<!$/
-
 inoremap jj <Esc>
 nnoremap  <C-s> :w<CR>
 inoremap  <C-s> <C-o>:w<CR>
