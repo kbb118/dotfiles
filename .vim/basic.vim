@@ -55,3 +55,6 @@ highlight DiffText   cterm=bold ctermfg=black ctermbg=white
 command! F echo expand('%:p')
 
 set grepprg=git\ grep\ -I\ --line-number
+
+" completion
+set completeopt=menu,preview,noselect

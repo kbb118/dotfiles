@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
   source ~/.vim/pre_plugin/git.vim
 
   Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-py2' }
+  let g:ycm_key_list_select_completion = ['<Down>']
 
   source ~/.vim/pre_plugin/gtags.vim
   source ~/.vim/pre_plugin/ultisnips.vim
