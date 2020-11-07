@@ -6,8 +6,8 @@ set encoding=utf8
 " LineNumber
 set number
 set relativenumber
-command! Ltoggle if &nu  |set nonu  |else |set  nu |endif
-                  \|if &rnu |set nornu |else |set rnu |endif
+command! Lon  set nu   | set rnu
+command! Loff set nonu | set nornu
 
 set shortmess-=S    " show search count
 set showcmd
