@@ -3,6 +3,11 @@
 
 set encoding=utf8
 
+call system("shellcheck -V >/dev/null 2>&1")
+if v:shell_error == 0
+ autocmd Filetype sh,zsh set makeprg=shellcheck\ -f\ gcc\ %
+endif
+
 " LineNumber
 set number
 set relativenumber

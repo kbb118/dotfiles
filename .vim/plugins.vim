@@ -16,6 +16,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-jp/vimdoc-ja'
   set helplang=ja,en
 
+  "
+  Plug 'tpope/vim-surround'
+  Plug 'RRethy/vim-illuminate'
+  let g:Illuminate_delay = 50
+
+  " fzf
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
+
   " color
   source ~/.vim/pre_plugin/color_scheme.vim
 

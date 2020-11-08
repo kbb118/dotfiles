@@ -23,7 +23,7 @@ set list
 set listchars=tab:»-,nbsp:%      " tab と nbsp だけ可視化しとく。
 
 " tab は背景に対し目立たない色に。
-function ModestTabChar()
+function! ModestTabChar()
   if &background == "light"
     highlight TabChar ctermfg=254
   elseif &background == "dark"
