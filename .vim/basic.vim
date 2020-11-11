@@ -3,9 +3,15 @@
 
 set encoding=utf8
 
+" https://vim.fandom.com/wiki/Automatically_open_the_quickfix_window_on_:make
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+" https://github.com/koalaman/shellcheck
 call system("shellcheck -V >/dev/null 2>&1")
 if v:shell_error == 0
- autocmd Filetype sh,zsh set makeprg=shellcheck\ -f\ gcc\ %
+ autocmd Filetype sh set makeprg=shellcheck\ -f\ gcc\ %
+ autocmd BufWritePost * if &ft=="sh" | :make
 endif
 
 " LineNumber
