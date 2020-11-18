@@ -1,14 +1,23 @@
-#!/bin/bash -eu
+#!/bin/sh
 
-for f in .??*
-    do
+# dry run
+command="ln -s"
+[ "$1" = "-d" ] && command="echo $command"
+
+for f in $(\ls -a $(dirname $0)); do
     # 無視したいファイルやディレクトリはこんな風に追加してね
-    [[ ${f} = ".git" ]] && continue
-    [[ ${f} = ".gitignore" ]] && continue
-    ln -snfv ${HOME}/dotfiles/${f} ${HOME}/${f}
-done
-echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
+    [ "$f" = "." ] && continue
+    [ "$f" = ".." ] && continue
+    [ "$f" = ".git" ] && continue
+    [ "$f" = ".gitignore" ] && continue
+    [ "$f" = "$(basename $0)" ] && continue
+    [ "$f" = "README.md" ] && continue
+    echo "$f" | grep -q '.swp$' && continue
 
-git add .
-git commit -m "committed automaticaly"
-git push origin master
+    if [ -e ~/$f ]; then
+        echo File already exists!! ~/$f
+    else
+        $command $(pwd)/$f ~/$f
+    fi
+done
+

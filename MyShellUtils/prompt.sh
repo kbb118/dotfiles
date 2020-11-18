@@ -20,7 +20,7 @@ retval() {
   [ $RETVAL -ne 0 ] && echo "$(bk_red $RETVAL)"
 }
 
-source ~/bin/git_prompt.sh
+source ~/MyShellUtils/git_prompt.sh
 
 NAM=\\u
 HOS=\\h
