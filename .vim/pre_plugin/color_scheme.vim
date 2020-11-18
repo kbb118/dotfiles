@@ -11,8 +11,8 @@ if !filereadable(s:dst)
 endif
 
 " I prefer light for my personal use and dark for working
-set background=light
-colorscheme solarized
+set background=dark
+"colorscheme solarized
 
 " For gitgutter signs, but recently I don't show them.
 highlight! link SignColumn LineNr
