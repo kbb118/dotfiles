@@ -1,0 +1,51 @@
+
+priority -50
+
+snippet #inc "#include 外部モジュール用"
+#include <$0.h>
+endsnippet
+snippet #incc "#include 内部モジュール用"
+#include "$0.h"
+endsnippet
+
+snippet #def "#define ..."
+#define $1
+endsnippet
+
+snippet main "main() (main)"
+int main(int argc, char *argv[])
+{
+    ${VISUAL}$0
+    return 0;
+}
+endsnippet
+
+snippet for "for loop"
+for ( $0 ; ; )
+{
+}
+endsnippet
+
+snippet whi "while"
+while ( $0 )
+{
+}
+endsnippet
+
+snippet if "if"
+if ( $0 )
+{
+}
+endsnippet
+
+snippet swi "switch"
+switch ( $0 )
+{
+    case FOO:
+        break;
+    case BAR:
+        break;
+    default:
+        break;
+}
+endsnippet
