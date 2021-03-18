@@ -69,3 +69,6 @@ set grepprg=git\ grep\ -I\ --line-number
 
 " completion
 set completeopt=menu,preview,noselect
+
+" :<c-f> があるから q: はいらない。typo するし
+nnoremap q: :q
