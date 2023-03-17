@@ -20,15 +20,20 @@ retval() {
   [ $RETVAL -ne 0 ] && echo "$(bk_red $RETVAL)"
 }
 
-source ~/MyShellUtils/git_prompt.sh
-
 NAM=\\u
 HOS=\\h
 CWD=\\w
 LF=\\n
 DOL=\\$
 _set_prompt() {
-    export PS1="$(retval)$(gre $NAM@$HOS) $(git_stat) $(yel $CWD)$LF$DOL "
+    PS1="$(retval)$(gre $NAM@$HOS) $(__git_ps1 '(%s)') $(yel $CWD)$LF$DOL "
 }
 PROMPT_COMMAND=_set_prompt
 
+source ~/MyShellUtils/git-prompt.sh
+## こいつら付けたいけど遅くなる。
+#GIT_PS1_SHOWDIRTYSTATE=1
+#GIT_PS1_SHOWUNTRACKEDFILES=1
+#GIT_PS1_SHOWSTASHSTATE=1
+#GIT_PS1_SHOWUPSTREAM="auto"
+#GIT_PS1_SHOWCONFLICTSTATE="yes"
